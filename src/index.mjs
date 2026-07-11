@@ -24,6 +24,8 @@ app.get("/", async (req, res) => {
   res.send(info.OGInfo);
 });
 
+app.get("/ping", (_, res) => res.sendStatus(200));
+
 // ? This functions connects to MongoDB and then starts listening as a server
 async function startServer() {
   mongoose.connect(process.env.MONGO_DATABASE_URL).then(() => {
